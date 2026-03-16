@@ -8,6 +8,7 @@ from . import (
     responses,
     actions,
     internal,
+    traces,
     ui,
 )  # noqa
 
@@ -20,6 +21,7 @@ __all__ = [
     "sorting",
     "states",
     "statuses",
+    "traces",
     "internal",
     "ui",
 ]

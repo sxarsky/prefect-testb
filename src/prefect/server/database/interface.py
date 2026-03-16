@@ -347,3 +347,13 @@ class PrefectDBInterface(metaclass=DBSingleton):
     def EventResource(self) -> type[orm_models.EventResource]:
         """An event resource model"""
         return orm_models.EventResource
+
+    @property
+    def ExecutionTrace(self) -> type[orm_models.ExecutionTrace]:
+        """An execution trace model"""
+        return orm_models.ExecutionTrace
+
+    @property
+    def TraceSpan(self) -> type[orm_models.TraceSpan]:
+        """A trace span model"""
+        return orm_models.TraceSpan
