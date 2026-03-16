@@ -92,6 +92,7 @@ enforce_minimum_version: EnforceMinimumAPIVersion = EnforceMinimumAPIVersion(
 API_ROUTERS = (
     api.flows.router,
     api.flow_runs.router,
+    api.flow_costs.router,
     api.task_runs.router,
     api.flow_run_states.router,
     api.task_run_states.router,
