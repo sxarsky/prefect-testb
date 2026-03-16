@@ -1,0 +1,158 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"cost-calc-flow-20240315\", \"tags\": []}",
+    "ResponseBody": "{\"id\": \"aabbccdd-aabb-ccdd-aabb-aabbccddaabb\", \"name\": \"cost-calc-flow-20240315\", \"tags\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flows/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T18:50:06.340Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"flow_id\": \"aabbccdd-aabb-ccdd-aabb-aabbccddaabb\", \"cost_per_second\": 0.01, \"cost_per_task\": 0.05, \"currency\": \"USD\"}",
+    "ResponseBody": "{\"id\": \"bbccddee-bbcc-ddee-bbcc-bbccddeeff00\", \"flow_id\": \"aabbccdd-aabb-ccdd-aabb-aabbccddaabb\", \"cost_per_second\": 0.01, \"cost_per_task\": 0.05, \"currency\": \"USD\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-costs/profiles/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T18:50:11.414Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"flow_id\": \"aabbccdd-aabb-ccdd-aabb-aabbccddaabb\", \"name\": \"cost-calc-flow-run-20240315\"}",
+    "ResponseBody": "{\"id\": \"ccddaabb-ccdd-aabb-ccdd-ccddaabbccdd\", \"flow_id\": \"aabbccdd-aabb-ccdd-aabb-aabbccddaabb\", \"name\": \"cost-calc-flow-run-20240315\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-runs/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T18:50:16.325Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"flow_run_id\": \"ccddaabb-ccdd-aabb-ccdd-ccddaabbccdd\", \"total_cost\": 3.25, \"execution_seconds\": 300, \"task_count\": 5, \"cost_breakdown\": {\"task_1\": 0.65, \"task_2\": 0.65, \"task_3\": 0.65, \"task_4\": 0.65, \"task_5\": 0.65}, \"calculated_at\": \"2024-03-15T00:05:00+00:00\"}",
+    "ResponseBody": "{\"id\": \"ddeeaabb-ddee-aabb-ddee-ddeeaabbddee\", \"flow_run_id\": \"ccddaabb-ccdd-aabb-ccdd-ccddaabbccdd\", \"total_cost\": 3.25, \"execution_seconds\": 300, \"task_count\": 5, \"cost_breakdown\": {\"task_1\": 0.65, \"task_2\": 0.65, \"task_3\": 0.65, \"task_4\": 0.65, \"task_5\": 0.65}, \"calculated_at\": \"2024-03-15T00:05:00+00:00\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-costs/run-costs/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T18:50:23.129Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\": \"ddeeaabb-ddee-aabb-ddee-ddeeaabbddee\", \"flow_run_id\": \"ccddaabb-ccdd-aabb-ccdd-ccddaabbccdd\", \"total_cost\": 3.25, \"execution_seconds\": 300, \"task_count\": 5, \"cost_breakdown\": {\"task_1\": 0.65, \"task_2\": 0.65, \"task_3\": 0.65, \"task_4\": 0.65, \"task_5\": 0.65}, \"calculated_at\": \"2024-03-15T00:05:00+00:00\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-costs/run-costs/flow-run/ccddaabb-ccdd-aabb-ccdd-ccddaabbccdd",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T18:50:29.451Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "[{\"id\": \"ddeeaabb-ddee-aabb-ddee-ddeeaabbddee\", \"flow_run_id\": \"ccddaabb-ccdd-aabb-ccdd-ccddaabbccdd\", \"total_cost\": 3.25, \"execution_seconds\": 300, \"task_count\": 5}]",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-costs/history/flow/aabbccdd-aabb-ccdd-aabb-aabbccddaabb",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T18:50:34.348Z",
+    "Scheme": "http"
+  }
+]
