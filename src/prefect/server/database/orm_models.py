@@ -1256,6 +1256,22 @@ class CsrfToken(Base):
     expiration: Mapped[DateTime]
 
 
+class FlowDependency(Base):
+    """SQLAlchemy model for flow dependencies"""
+
+    upstream_flow_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow.id", ondelete="cascade"), index=True
+    )
+    downstream_flow_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow.id", ondelete="cascade"), index=True
+    )
+    dependency_type: Mapped[str]  # 'triggers', 'provides_data', 'blocks'
+
+    __table_args__: Any = (
+        sa.UniqueConstraint("upstream_flow_id", "downstream_flow_id", "dependency_type"),
+    )
+
+
 class Automation(Base):
     name: Mapped[str]
     description: Mapped[str] = mapped_column(default="")
