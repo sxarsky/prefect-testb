@@ -8,6 +8,7 @@ from . import (
     responses,
     actions,
     internal,
+    quotas,
     ui,
 )  # noqa
 
@@ -15,6 +16,7 @@ __all__ = [
     "actions",
     "core",
     "filters",
+    "quotas",
     "responses",
     "schedules",
     "sorting",
