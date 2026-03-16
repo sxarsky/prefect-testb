@@ -47,6 +47,10 @@ def test_dependencies_post():
 
     # Generated Assertions
     assert skyramp.check_status_code(dependencies_POST_response, "20x")
+    assert "id" in dependencies_POST_response.json()
+    assert "upstream_flow_id" in dependencies_POST_response.json()
+    assert "downstream_flow_id" in dependencies_POST_response.json()
+    assert "dependency_type" in dependencies_POST_response.json()
 
 
 if __name__ == "__main__":
