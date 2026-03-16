@@ -127,6 +127,44 @@ R = TypeVar("R")
 BACKOFF_MAX = 10
 
 
+def _validate_task_output(task: "Task[Any, Any]", result: Any) -> None:
+    """
+    Validate task output against the configured output_schema.
+
+    Args:
+        task: The task instance with optional output_schema
+        result: The result to validate
+
+    Raises:
+        ValidationError: If validation fails
+    """
+    if not hasattr(task, 'output_schema') or task.output_schema is None:
+        return
+
+    try:
+        # Assume output_schema is a Pydantic model
+        from pydantic import ValidationError
+
+        # Validate the result
+        if hasattr(task.output_schema, 'model_validate'):
+            # Pydantic v2
+            task.output_schema.model_validate(result)
+        elif hasattr(task.output_schema, 'parse_obj'):
+            # Pydantic v1
+            task.output_schema.parse_obj(result)
+        else:
+            # Try direct instantiation
+            task.output_schema(**result if isinstance(result, dict) else {"value": result})
+
+    except Exception as exc:
+        from prefect.logging import get_logger
+        logger = get_logger("task_engine")
+        logger.error(
+            f"Task output validation failed for task '{task.name}': {exc}"
+        )
+        raise ValueError(f"Task output validation failed: {exc}") from exc
+
+
 def _create_task_run_locally(
     task: "Task[Any, Any]",
     id: Optional[UUID] = None,
@@ -626,6 +664,9 @@ class SyncTaskRunEngine(BaseTaskRunEngine[P, R]):
             expiration = prefect.types._datetime.now("UTC") + self.task.cache_expiration
         else:
             expiration = None
+
+        # Validate output if schema is configured
+        _validate_task_output(self.task, result)
 
         terminal_state = return_value_to_state_sync(
             result,
@@ -1250,6 +1291,9 @@ class AsyncTaskRunEngine(BaseTaskRunEngine[P, R]):
             expiration = prefect.types._datetime.now("UTC") + self.task.cache_expiration
         else:
             expiration = None
+
+        # Validate output if schema is configured
+        _validate_task_output(self.task, result)
 
         terminal_state = await return_value_to_state(
             result,

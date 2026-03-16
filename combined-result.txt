@@ -1,0 +1,111 @@
+**Summary:** add integration, contract, fuzz tests for flow cost tracking endpoints
+
+<details>
+<summary>📋 Business Case Analysis</summary>
+
+This PR introduces flow cost tracking — a new billing/observability feature that calculates execution costs from flow run duration and task count. The seven new endpoints (FlowCostProfile CRUD + FlowRunCost creation/retrieval + cost history) represent a complete new resource group with no prior test coverage, making automated test generation high-value. Incorrect cost calculations or broken aggregation could result in inaccurate billing data, so validating the full lifecycle (create profile → record run cost → verify history) and input boundary conditions is critical before merging.
+
+</details>
+
+<details>
+<summary>💡 New Tests Created</summary>
+
+- **Integration** for POST /api/flow-costs/profiles/, GET /api/flow-costs/profiles/flow/{id}, PATCH /api/flow-costs/profiles/flow/{id}, DELETE /api/flow-costs/profiles/flow/{id} — `test_flow_cost_profile_lifecycle.py`
+  Creates a flow, then creates a cost profile for it, reads the profile back to verify fields (cost_per_second, cost_per_task, currency), updates the rates, and deletes the profile. Validates the full FlowCostProfile CRUD lifecycle with cross-resource chaining from the flows endpoint.
+  📎 Scenario: `tests/scenario_flow-cost-profile-lifecycle.json`
+- **Integration** for POST /api/flow-costs/run-costs/, GET /api/flow-costs/run-costs/flow-run/{id}, GET /api/flow-costs/history/flow/{id} — `test_flow_run_cost_calculation.py`
+  Creates a flow and a flow run, records a run cost with execution_seconds, task_count, and cost_breakdown, reads back the cost to verify total_cost and per-task breakdown accuracy, then confirms the run appears in historical aggregation for the flow.
+  📎 Scenario: `tests/scenario_flow-run-cost-calculation.json`
+- **Contract** for POST /api/flow-costs/profiles/ — `test_flow_cost_profile_contract.py`
+  Validates that POST /api/flow-costs/profiles/ returns HTTP 201 and that the response conforms to the FlowCostProfile schema (id, flow_id, cost_per_second, cost_per_task, currency). Guards against breaking schema changes in future iterations.
+- **Fuzz** for POST /api/flow-costs/run-costs/ — `test_flow_run_cost_fuzz.py`
+  Sends boundary and invalid inputs to POST /api/flow-costs/run-costs/ — including negative total_cost, zero/negative execution_seconds, oversized task_count, malformed flow_run_id UUIDs, and null cost_breakdown — to verify proper input validation and error responses.
+
+</details>
+
+<details>
+<summary>📌 Additional Recommendations (6)</summary>
+
+#### Integration
+
+**`flow-cost-cascade-delete`**
+
+Validates that deleting a flow cascades correctly to its FlowCostProfile (ON DELETE CASCADE is set on the FK). Create a flow → create its cost profile → delete the flow → attempt GET /api/flow-costs/profiles/flow/{id} and expect 404. Guards against orphaned cost profile records.
+
+1. `POST /api/flows/` — Create a flow
+2. `POST /api/flow-costs/profiles/` — Create cost profile for the flow
+3. `DELETE /api/flows/{flow.id}` — Delete the flow
+4. `GET /api/flow-costs/profiles/flow/{flow.id}` — Verify cost profile is also deleted (cascade)
+
+**`flow-cost-duplicate-profile-conflict`**
+
+FlowCostProfile has a unique constraint on flow_id. Verify that creating a second profile for the same flow returns a 409 Conflict (or equivalent error), and that the original profile remains unchanged.
+
+1. `POST /api/flows/` — Create a flow
+2. `POST /api/flow-costs/profiles/` — Create first cost profile
+3. `POST /api/flow-costs/profiles/` — Attempt duplicate profile creation — expect conflict
+4. `GET /api/flow-costs/profiles/flow/{flow.id}` — Verify original profile unchanged
+
+**`flow-cost-history-pagination`**
+
+Validates the limit parameter on GET /api/flow-costs/history/flow/{id}. Create a flow, record multiple run costs, then query history with limit=2 and verify only 2 records are returned ordered by calculated_at desc.
+
+1. `POST /api/flows/` — Create a flow
+2. `POST /api/flow-runs/` — Create flow run 1
+3. `POST /api/flow-costs/run-costs/` — Record run cost 1
+4. `POST /api/flow-costs/run-costs/` — Create flow run 2 and record cost 2
+5. `POST /api/flow-costs/run-costs/` — Create flow run 3 and record cost 3
+6. `GET /api/flow-costs/history/flow/{flow.id}?limit=2` — Get history with limit=2 — verify only 2 records returned
+
+#### Contract
+
+**`flow-run-cost-response-schema`**
+
+Contract test for POST /api/flow-costs/run-costs/ — validates response schema includes all FlowRunCost fields: id, flow_run_id, total_cost, execution_seconds, task_count, cost_breakdown, calculated_at. Prevents regressions if fields are renamed or removed.
+
+1. `POST /api/flow-costs/run-costs/` — POST to create a run cost and validate response schema against FlowRunCost model
+
+#### Fuzz
+
+**`flow-cost-profile-fuzz`**
+
+Fuzz test for POST /api/flow-costs/profiles/ — test boundary values including negative cost_per_second, zero cost_per_task, invalid currency codes (too long, numeric), and missing required flow_id to ensure robust validation.
+
+1. `POST /api/flow-costs/profiles/` — POST with invalid/boundary values for FlowCostProfileCreate fields
+
+#### E2E
+
+**`flow-cost-ui-journey`**
+
+E2E test for the cost tracking UI journey: navigate to a flow detail page, configure its cost profile, trigger a flow run, then verify the cost summary appears in the flow run detail view. Requires Playwright trace recording against the ui-v2 frontend.
+
+1. Record a Playwright trace: start skyramp_start_trace_collection with playwright=true
+2. Navigate to flow detail page in the Prefect UI
+3. Open cost profile configuration and set cost_per_second and cost_per_task
+4. Save the profile and verify it persists on reload
+5. Trigger a flow run and wait for completion
+6. Verify cost summary (total_cost, execution_seconds, task_count) is shown in run detail
+7. Stop trace collection and call skyramp_e2e_test_generation with the captured trace
+
+
+</details>
+
+<details>
+<summary>🧪 Test Results</summary>
+
+| Test Type | Endpoint | Status | Details |
+|-----------|----------|--------|---------|
+| Integration | POST /api/flow-costs/profiles/ | Fail | 4.76s, test_flow_cost_profile_lifecycle.py — 404 on POST /api/flow-costs/profiles/; new endpoints not yet deployed on test server (PR branch not merged) |
+| Integration | POST /api/flow-costs/run-costs/ | Fail | 4.78s, test_flow_run_cost_calculation.py — 404 on POST /api/flow-runs/ upstream step; new flow-costs endpoints not reachable on test server |
+| Contract | POST /api/flow-costs/profiles/ | Fail | 2.72s, test_flow_cost_profile_contract.py — 404 on POST /api/flow-costs/profiles/; route not registered on running server (PR not deployed) |
+| Fuzz | POST /api/flow-costs/run-costs/ | Fail | test_flow_run_cost_fuzz.py — SyntaxError at collection: variable name 'run-costs_POST_request_body' contains a hyphen (invalid Python identifier in generated file) |
+
+</details>
+
+<details>
+<summary>⚠️ Issues Found</summary>
+
+- POST /api/flow-costs/profiles/ returns 404 — new flow-costs router not registered on the running test server (expected until PR is deployed)
+- test_flow_run_cost_fuzz.py has a Python SyntaxError: generated variable name 'run-costs_POST_request_body' contains a hyphen, preventing test collection
+
+</details>
