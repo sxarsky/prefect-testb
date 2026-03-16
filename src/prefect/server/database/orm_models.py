@@ -1256,6 +1256,34 @@ class CsrfToken(Base):
     expiration: Mapped[DateTime]
 
 
+class ExecutionTrace(Base):
+    """SQLAlchemy model for execution trace"""
+
+    flow_run_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow_run.id", ondelete="cascade"), index=True
+    )
+    parent_trace_id: Mapped[Optional[uuid.UUID]]
+    trace_type: Mapped[str]  # 'flow', 'task', 'subflow'
+    name: Mapped[str]
+    started_at: Mapped[datetime.datetime]
+    completed_at: Mapped[Optional[datetime.datetime]]
+    duration_ms: Mapped[Optional[int]]
+    status: Mapped[str]
+
+
+class TraceSpan(Base):
+    """SQLAlchemy model for trace span"""
+
+    trace_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("execution_trace.id", ondelete="cascade"), index=True
+    )
+    span_name: Mapped[str]
+    span_type: Mapped[str]  # 'execution', 'cache_check', 'retry', 'state_transition'
+    started_at: Mapped[datetime.datetime]
+    duration_ms: Mapped[int]
+    metadata: Mapped[dict[str, Any]] = mapped_column(JSON, server_default="{}", default=dict)
+
+
 class Automation(Base):
     name: Mapped[str]
     description: Mapped[str] = mapped_column(default="")

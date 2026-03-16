@@ -18,6 +18,7 @@ from . import (
     task_run_states,
     task_runs,
     task_workers,
+    traces,
     variables,
     work_queues,
     workers,
