@@ -347,3 +347,13 @@ class PrefectDBInterface(metaclass=DBSingleton):
     def EventResource(self) -> type[orm_models.EventResource]:
         """An event resource model"""
         return orm_models.EventResource
+
+    @property
+    def FlowQuota(self) -> type[orm_models.FlowQuota]:
+        """A flow quota model"""
+        return orm_models.FlowQuota
+
+    @property
+    def QuotaUsage(self) -> type[orm_models.QuotaUsage]:
+        """A quota usage model"""
+        return orm_models.QuotaUsage

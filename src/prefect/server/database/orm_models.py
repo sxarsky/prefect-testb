@@ -1250,6 +1250,39 @@ class FlowRunInput(Base):
     __table_args__: Any = (sa.UniqueConstraint("flow_run_id", "key"),)
 
 
+class FlowQuota(Base):
+    """SQLAlchemy model for flow quota configuration"""
+
+    flow_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow.id", ondelete="cascade"), index=True
+    )
+    max_concurrent_runs: Mapped[int] = mapped_column(default=10, server_default="10")
+    max_runs_per_hour: Mapped[int] = mapped_column(default=100, server_default="100")
+    max_runs_per_day: Mapped[int] = mapped_column(default=1000, server_default="1000")
+    quota_exceeded_action: Mapped[str] = mapped_column(
+        default="reject", server_default="reject"
+    )
+
+    __table_args__: Any = (sa.UniqueConstraint("flow_id"),)
+
+
+class QuotaUsage(Base):
+    """SQLAlchemy model for tracking quota usage"""
+
+    flow_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow.id", ondelete="cascade"), index=True
+    )
+    period_start: Mapped[datetime.datetime]
+    period_type: Mapped[str]  # 'hour' or 'day'
+    run_count: Mapped[int] = mapped_column(default=0, server_default="0")
+    quota_exceeded_count: Mapped[int] = mapped_column(default=0, server_default="0")
+
+    __table_args__: Any = (
+        sa.UniqueConstraint("flow_id", "period_start", "period_type"),
+        sa.Index("ix_quota_usage_flow_period", "flow_id", "period_start", "period_type"),
+    )
+
+
 class CsrfToken(Base):
     token: Mapped[str]
     client: Mapped[str] = mapped_column(unique=True)
