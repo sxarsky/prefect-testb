@@ -1256,6 +1256,19 @@ class CsrfToken(Base):
     expiration: Mapped[DateTime]
 
 
+class FlowCheckpoint(Base):
+    """SQLAlchemy model for flow checkpoint"""
+
+    flow_run_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow_run.id", ondelete="cascade"), index=True
+    )
+    task_run_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("task_run.id", ondelete="cascade"), index=True
+    )
+    checkpoint_data: Mapped[dict[str, Any]] = mapped_column(JSON, server_default="{}", default=dict)
+    created_at: Mapped[datetime.datetime] = mapped_column(server_default=sa.func.now())
+
+
 class Automation(Base):
     name: Mapped[str]
     description: Mapped[str] = mapped_column(default="")

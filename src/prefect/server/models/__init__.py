@@ -1,6 +1,7 @@
 from . import (
     artifacts,
     block_documents,
+    checkpoints,
     block_registration,
     block_schemas,
     block_types,

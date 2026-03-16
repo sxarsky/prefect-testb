@@ -3,6 +3,7 @@ from . import (
     admin,
     automations,
     block_capabilities,
+    checkpoints,
     block_documents,
     block_schemas,
     block_types,
