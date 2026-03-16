@@ -347,3 +347,8 @@ class PrefectDBInterface(metaclass=DBSingleton):
     def EventResource(self) -> type[orm_models.EventResource]:
         """An event resource model"""
         return orm_models.EventResource
+
+    @property
+    def FlowDependency(self) -> type[orm_models.FlowDependency]:
+        """A flow dependency model"""
+        return orm_models.FlowDependency

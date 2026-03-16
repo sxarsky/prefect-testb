@@ -13,6 +13,7 @@ from . import (
     flow_run_states,
     flow_runs,
     flows,
+    impact,
     logs,
     saved_searches,
     task_run_states,
