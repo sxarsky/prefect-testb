@@ -1256,6 +1256,27 @@ class CsrfToken(Base):
     expiration: Mapped[DateTime]
 
 
+class FlowRetryBudget(Base):
+    """SQLAlchemy model for flow retry budget"""
+
+    flow_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow.id", ondelete="cascade"), index=True, unique=True
+    )
+    max_total_retries: Mapped[int] = mapped_column(default=10, server_default="10")
+    retry_reset_interval_hours: Mapped[int] = mapped_column(default=24, server_default="24")
+
+
+class FlowRunRetryUsage(Base):
+    """SQLAlchemy model for flow run retry usage"""
+
+    flow_run_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow_run.id", ondelete="cascade"), index=True, unique=True
+    )
+    retries_used: Mapped[int] = mapped_column(default=0, server_default="0")
+    retries_remaining: Mapped[int] = mapped_column(default=10, server_default="10")
+    budget_exceeded: Mapped[bool] = mapped_column(default=False, server_default="0")
+
+
 class Automation(Base):
     name: Mapped[str]
     description: Mapped[str] = mapped_column(default="")
