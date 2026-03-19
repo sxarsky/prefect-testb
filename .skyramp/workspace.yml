@@ -1,0 +1,9 @@
+# Skyramp Workspace Configuration for SKYR-3646 Validation
+# This config should be OVERRIDDEN by workflow config
+
+base_url: "http://workspace-config-url:4200"
+auth_scheme: "Bearer"
+
+# This is the workspace-level config
+# Expected behavior: Workflow config should win
+test_config_level: "workspace"

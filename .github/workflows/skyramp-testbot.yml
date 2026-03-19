@@ -42,6 +42,7 @@ jobs:
           target_ready_check_command: 'curl -f http://localhost:4200/api/health'
           target_ready_check_timeout: 90
           auth_token_command: './deployment-testbot/get-token.sh'
+          base_url: 'http://workflow-config-url:4200'
 
           test_directory: 'tests'
           auto_commit: true
