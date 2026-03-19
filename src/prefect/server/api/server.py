@@ -114,6 +114,7 @@ API_ROUTERS = (
     api.events.router,
     api.automations.router,
     api.templates.router,
+    api.management.router,
     api.ui.flows.router,
     api.ui.flow_runs.router,
     api.ui.schemas.router,
