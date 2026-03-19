@@ -1,0 +1,5 @@
+services:
+  - serviceName: prefect-api
+    language: python
+    framework: pytest
+    outputDir: workspace-tests
