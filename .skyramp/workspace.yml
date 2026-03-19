@@ -1,0 +1,7 @@
+# Skyramp Workspace Configuration for SKYR-3646 Validation
+# Testing test_directory precedence
+
+test_directory: workspace-tests
+
+# This is the workspace-level config
+# Expected behavior with SKYR-3646 fix: Workflow config should override this
