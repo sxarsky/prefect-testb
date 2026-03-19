@@ -3,9 +3,11 @@ name: Skyramp Testbot
 on:
   pull_request:
     types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref }}
+  group: ${{ github.workflow }}-${{ github.event.pull_request.head.ref || github.run_id }}
   cancel-in-progress: true
 
 jobs:
