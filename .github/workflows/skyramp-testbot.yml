@@ -43,7 +43,6 @@ jobs:
           target_ready_check_timeout: 90
           auth_token_command: './deployment-testbot/get-token.sh'
 
-          test_directory: 'tests'
           auto_commit: true
           post_pr_comment: true
           enable_debug: true
