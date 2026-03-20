@@ -1,0 +1,25 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"flow_id\": \"flow-unauth-test\", \"max_retries\": 5}",
+    "ResponseBody": "{\"detail\": \"Unauthorized\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-retries/budgets",
+    "QueryParams": {},
+    "StatusCode": 401,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:52:02.847Z",
+    "Scheme": "http"
+  }
+]
