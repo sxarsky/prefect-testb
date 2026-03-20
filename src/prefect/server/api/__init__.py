@@ -25,6 +25,7 @@ from . import (
     task_runs,
     task_workers,
     templates,
+    traces_v2,
     ui,
     variables,
     work_queues,
