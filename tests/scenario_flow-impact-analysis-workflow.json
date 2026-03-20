@@ -1,0 +1,75 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"downstream_flows\": [{\"flow_id\": \"flow-2\", \"dependency_type\": \"direct\"}, {\"flow_id\": \"flow-3\", \"dependency_type\": \"indirect\"}], \"total_affected\": 2}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-impact/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/downstream",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:39:58.091Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"directly_affected\": 5, \"indirectly_affected\": 12, \"critical_flows_affected\": 2}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-impact/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/blast-radius",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:40:02.320Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"impact_level\": \"critical\", \"notifications_sent\": 3, \"teams_notified\": [\"team-a\", \"team-b\", \"team-c\"]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-impact/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/notify",
+    "QueryParams": {
+      "impact_level": [
+        "critical"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:40:07.472Z",
+    "Scheme": "http"
+  }
+]
