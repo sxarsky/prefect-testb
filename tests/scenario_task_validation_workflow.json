@@ -1,0 +1,68 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\": \"object\", \"properties\": {\"status\": {\"type\": \"string\"}, \"result\": {\"type\": \"number\"}}}",
+    "ResponseBody": "{\"id\": \"schema-123\", \"task_name\": \"process_data\", \"schema_type\": \"pydantic\", \"schema_definition\": {\"type\": \"object\", \"properties\": {\"status\": {\"type\": \"string\"}, \"result\": {\"type\": \"number\"}}}, \"created_at\": \"2026-03-20T14:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation-v2/schemas/",
+    "QueryParams": {
+      "task_name": [
+        "process_data"
+      ],
+      "schema_type": [
+        "pydantic"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:38:03.821Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"status\": \"success\", \"result\": 42}",
+    "ResponseBody": "{\"task_name\": \"process_data\", \"valid\": true, \"errors\": [], \"validated_at\": \"2026-03-20T14:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation-v2/validate/",
+    "QueryParams": {
+      "task_name": [
+        "process_data"
+      ],
+      "schema_id": [
+        "schema-123"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:38:08.588Z",
+    "Scheme": "http"
+  }
+]
