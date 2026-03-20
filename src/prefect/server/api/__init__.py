@@ -15,6 +15,7 @@ from . import (
     events,
     flow_run_states,
     flow_runs,
+    flow_costs_v2,
     flows,
     logs,
     middleware,
