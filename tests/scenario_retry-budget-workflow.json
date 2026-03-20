@@ -1,0 +1,78 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"flow_id\": \"flow-test-abc\", \"max_retries\": 10, \"used_retries\": 0, \"budget_set\": true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/task-retries/budgets",
+    "QueryParams": {
+      "flow_id": [
+        "flow-test-abc"
+      ],
+      "max_retries": [
+        "10"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:38:05.767Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"budgets\": [{\"flow_id\": \"flow-test-abc\", \"max_retries\": 10, \"used_retries\": 3}, {\"flow_id\": \"flow-2\", \"max_retries\": 5, \"used_retries\": 5}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/task-retries/budgets",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:38:10.397Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"total_retries\": 3, \"budget_remaining\": 7, \"tasks_retried\": [\"task-1\", \"task-3\"]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/task-retries/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/usage",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:38:16.413Z",
+    "Scheme": "http"
+  }
+]
