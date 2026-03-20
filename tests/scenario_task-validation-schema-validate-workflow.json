@@ -1,0 +1,56 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"type\": \"object\", \"properties\": {\"result\": {\"type\": \"string\"}}}",
+    "ResponseBody": "{\"id\": \"new-schema\", \"task_name\": \"process_data_task\", \"schema_definition\": {\"type\": \"object\", \"properties\": {\"result\": {\"type\": \"string\"}}}, \"created\": true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation/schemas",
+    "QueryParams": {
+      "task_name": [
+        "process_data_task"
+      ]
+    },
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:32:26.347Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"result\": \"processed_successfully\"}",
+    "ResponseBody": "{\"task_id\": \"task-abc-123\", \"valid\": true, \"errors\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation/validate",
+    "QueryParams": {
+      "task_id": [
+        "task-abc-123"
+      ]
+    },
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:32:39.670Z",
+    "Scheme": "http"
+  }
+]
