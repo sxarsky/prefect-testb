@@ -1,0 +1,61 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"id\": \"new-profile\", \"flow_id\": \"flow-xyz-002\", \"cost_per_second\": 0.02, \"currency\": \"USD\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-costs/profiles",
+    "QueryParams": {
+      "flow_id": [
+        "flow-xyz-002"
+      ],
+      "cost_per_second": [
+        "0.02"
+      ]
+    },
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:31:29.262Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"profiles\": [{\"id\": \"1\", \"flow_id\": \"flow-1\", \"cost_per_second\": 0.01, \"currency\": \"USD\"}, {\"id\": \"2\", \"flow_id\": \"flow-2\", \"cost_per_second\": 0.02, \"currency\": \"USD\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-costs/profiles",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:31:45.087Z",
+    "Scheme": "http"
+  }
+]
