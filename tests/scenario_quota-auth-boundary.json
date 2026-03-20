@@ -1,0 +1,35 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"detail\": \"Unauthorized\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/quotas-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/quota/",
+    "QueryParams": {
+      "max_concurrent_runs": [
+        "10"
+      ],
+      "max_daily_runs": [
+        "100"
+      ],
+      "max_hourly_runs": [
+        "20"
+      ]
+    },
+    "StatusCode": 401,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T19:00:41.149Z",
+    "Scheme": "http"
+  }
+]
