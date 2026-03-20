@@ -1,0 +1,61 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"id\": \"budget-123\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"max_retries\": 10, \"reset_interval\": \"daily\", \"current_usage\": 0}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/retry-budget-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/retry-budget/",
+    "QueryParams": {
+      "max_retries": [
+        "10"
+      ],
+      "reset_interval": [
+        "daily"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:11:46.179Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_run_id\": \"7b3c9d21-4e8f-4a2b-b5c7-1d2e3f4a5b6c\", \"total_retries\": 3, \"budget_limit\": 10, \"budget_remaining\": 7, \"tasks_retried\": [\"task-1\", \"task-2\", \"task-1\"], \"retry_details\": [{\"task_name\": \"task-1\", \"retries\": 2}, {\"task_name\": \"task-2\", \"retries\": 1}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/retry-budget-v2/flow-runs/7b3c9d21-4e8f-4a2b-b5c7-1d2e3f4a5b6c/retry-usage/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:12:02.332Z",
+    "Scheme": "http"
+  }
+]
