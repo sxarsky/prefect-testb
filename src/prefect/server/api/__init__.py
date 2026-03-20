@@ -23,6 +23,7 @@ from . import (
     saved_searches,
     task_run_states,
     task_runs,
+    task_validation,
     task_workers,
     templates,
     ui,

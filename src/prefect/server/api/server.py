@@ -93,6 +93,7 @@ API_ROUTERS = (
     api.flows.router,
     api.flow_runs.router,
     api.task_runs.router,
+    api.task_validation.router,
     api.flow_run_states.router,
     api.task_run_states.router,
     api.deployments.router,
