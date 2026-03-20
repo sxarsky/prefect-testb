@@ -1,0 +1,54 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"task_name\": \"process_data_integrity_test\", \"schema_definition\": {\"type\": \"object\", \"properties\": {\"result\": {\"type\": \"string\"}, \"value\": {\"type\": \"integer\"}}, \"required\": [\"result\"]}}",
+    "ResponseBody": "{\"id\": \"new-schema\", \"task_name\": \"process_data_integrity_test\", \"schema_definition\": {\"type\": \"object\", \"properties\": {\"result\": {\"type\": \"string\"}, \"value\": {\"type\": \"integer\"}}, \"required\": [\"result\"]}, \"created\": true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation/schemas",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:33:28.308Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"task_id\": \"new-schema\", \"output_data\": {\"result\": \"success\", \"value\": 42}}",
+    "ResponseBody": "{\"task_id\": \"new-schema\", \"valid\": true, \"errors\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation/validate",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:33:51.415Z",
+    "Scheme": "http"
+  }
+]

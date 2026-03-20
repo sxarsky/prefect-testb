@@ -1,0 +1,80 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"schemas\": [{\"id\": \"1\", \"task_name\": \"process_data\", \"schema_type\": \"pydantic\"}, {\"id\": \"2\", \"task_name\": \"transform_data\", \"schema_type\": \"json\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/task-validation/schemas",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:33:30.312Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"task_name\": \"workflow_test_task\", \"schema_definition\": {\"type\": \"object\", \"properties\": {\"output\": {\"type\": \"string\"}}, \"required\": [\"output\"]}}",
+    "ResponseBody": "{\"id\": \"new-schema\", \"task_name\": \"workflow_test_task\", \"schema_definition\": {\"type\": \"object\", \"properties\": {\"output\": {\"type\": \"string\"}}, \"required\": [\"output\"]}, \"created\": true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation/schemas",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:33:53.054Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"task_id\": \"new-schema\", \"output_data\": {\"output\": \"workflow completed successfully\"}}",
+    "ResponseBody": "{\"task_id\": \"new-schema\", \"valid\": true, \"errors\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation/validate",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:34:04.283Z",
+    "Scheme": "http"
+  }
+]
