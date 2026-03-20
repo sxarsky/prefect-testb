@@ -1,0 +1,59 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"span_id\": \"new-span\", \"span_name\": \"test-span\", \"duration_ms\": 150}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/flow-traces/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans",
+    "QueryParams": {
+      "span_name": [
+        "test-span"
+      ],
+      "duration_ms": [
+        "150"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:53:41.489Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"format\": \"json\", \"download_url\": \"/traces/3fa85f64-5717-4562-b3fc-2c963f66afa6.json\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/flow-traces/export/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "QueryParams": {
+      "format": [
+        "json"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:53:46.596Z",
+    "Scheme": "http"
+  }
+]
