@@ -1,0 +1,55 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"span_id\": \"new-span\", \"span_name\": \"data-validation-task\", \"duration_ms\": 300}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-traces/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/spans",
+    "QueryParams": {
+      "span_name": [
+        "data-validation-task"
+      ],
+      "duration_ms": [
+        "300"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:35:43.917Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"spans\": [{\"span_id\": \"1\", \"name\": \"task-1\", \"duration_ms\": 150}, {\"span_id\": \"2\", \"name\": \"task-2\", \"duration_ms\": 200}, {\"span_id\": \"new-span\", \"name\": \"data-validation-task\", \"duration_ms\": 300}], \"total_duration_ms\": 650}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-traces/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T18:36:02.772Z",
+    "Scheme": "http"
+  }
+]
