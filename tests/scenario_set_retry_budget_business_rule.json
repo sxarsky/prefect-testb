@@ -1,0 +1,28 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"max_retries\": 5, \"reset_interval\": \"daily\"}",
+    "ResponseBody": "{\"id\": \"budget-123\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"max_retries\": 5, \"reset_interval\": \"daily\", \"current_usage\": 0}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/retry-budget-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/retry-budget/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T19:01:53.655Z",
+    "Scheme": "http"
+  }
+]
