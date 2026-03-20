@@ -1,0 +1,54 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"downstream_flows\": [{\"flow_id\": \"flow-2\", \"dependency_type\": \"direct\"}, {\"flow_id\": \"flow-3\", \"dependency_type\": \"indirect\"}], \"total_affected\": 2}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-impact/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/downstream",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:53:33.178Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"directly_affected\": 5, \"indirectly_affected\": 12, \"critical_flows_affected\": 2}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-impact/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/blast-radius",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:53:49.601Z",
+    "Scheme": "http"
+  }
+]

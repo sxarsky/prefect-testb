@@ -1,0 +1,58 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"directly_affected\": 5, \"indirectly_affected\": 12, \"critical_flows_affected\": 2}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-impact/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/blast-radius",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:53:35.556Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"impact_level\": \"high\", \"notifications_sent\": 3, \"teams_notified\": [\"team-a\", \"team-b\", \"team-c\"]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-impact/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/notify",
+    "QueryParams": {
+      "impact_level": [
+        "high"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:53:52.829Z",
+    "Scheme": "http"
+  }
+]
