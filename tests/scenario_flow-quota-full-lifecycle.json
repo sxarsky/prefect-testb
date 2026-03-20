@@ -1,0 +1,90 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"limits\": [{\"flow_id\": \"flow-1\", \"max_concurrent_runs\": 10, \"max_daily_runs\": 100}, {\"flow_id\": \"flow-2\", \"max_concurrent_runs\": 5, \"max_daily_runs\": 50}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Basic SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-quotas/limits",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:30:06.696Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"flow_id\": \"flow-lifecycle-1\", \"max_concurrent_runs\": 8, \"max_daily_runs\": 80, \"status\": \"active\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Basic SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-quotas/limits",
+    "QueryParams": {
+      "flow_id": [
+        "flow-lifecycle-1"
+      ],
+      "max_concurrent_runs": [
+        "8"
+      ],
+      "max_daily_runs": [
+        "80"
+      ]
+    },
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:30:17.170Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_id\": \"flow-lifecycle-1\", \"current_concurrent_runs\": 0, \"runs_today\": 0, \"limit_reached\": false}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Basic SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-quotas/usage/flow-lifecycle-1",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:30:23.470Z",
+    "Scheme": "http"
+  }
+]
