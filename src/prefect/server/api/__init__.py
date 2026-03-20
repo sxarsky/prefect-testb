@@ -13,6 +13,7 @@ from . import (
     dependencies,
     deployments,
     events,
+    flow_costs,
     flow_run_states,
     flow_runs,
     flows,
