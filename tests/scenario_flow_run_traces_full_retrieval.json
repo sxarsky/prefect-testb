@@ -1,0 +1,25 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"traces\": [{\"id\": \"span-1\", \"flow_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"span_type\": \"task\", \"name\": \"extract_data\", \"start_time\": \"2026-03-22T10:00:00\", \"end_time\": \"2026-03-22T10:00:45\", \"duration_ms\": 45000, \"status\": \"completed\", \"parent_span_id\": null}, {\"id\": \"span-4\", \"flow_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"span_type\": \"flow\", \"name\": \"etl_pipeline\", \"start_time\": \"2026-03-22T09:59:55\", \"end_time\": \"2026-03-22T10:02:40\", \"duration_ms\": 165000, \"status\": \"completed\", \"parent_span_id\": null}], \"total_spans\": 4}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/traces-v2/flow-runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/traces/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T21:10:48.738Z",
+    "Scheme": "http"
+  }
+]
