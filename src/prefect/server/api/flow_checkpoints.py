@@ -38,8 +38,21 @@ async def list_checkpoints(run_id: str):
 
 
 @router.post("/runs/{run_id}")
-async def create_checkpoint(run_id: str, task_name: str, state_data: dict):
+async def create_checkpoint(run_id: str, task_name: str, state_data: dict, validation_status: str):
     """Create a checkpoint."""
+    # Validate the validation_status
+    if validation_status not in ["validated", "pending", "failed"]:
+        raise HTTPException(
+            status_code=400,
+            detail="validation_status must be one of: validated, pending, failed"
+        )
+
+    if validation_status != "validated":
+        raise HTTPException(
+            status_code=400,
+            detail="Checkpoint must be validated before creation"
+        )
+
     return {
         "checkpoint_id": "new-checkpoint",
         "run_id": run_id,
