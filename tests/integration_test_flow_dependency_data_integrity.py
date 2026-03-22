@@ -46,7 +46,7 @@ def test_integration():
     # Execute Request
     validate_POST_response = client.send_request(
         url=URL_localhost,
-        path="/api/flow-dependencies/flows/{flows}/validate",
+        path="/api/flow-dependencies/flows/{flows}/validate-graph",
         method="POST",
         body=validate_POST_request_body,
         headers=headers,

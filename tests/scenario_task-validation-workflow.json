@@ -1,0 +1,54 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"task_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"validation_status\": \"passed\", \"total_checks\": 5, \"passed_checks\": 4, \"failed_checks\": 1, \"skipped_checks\": 0, \"validation_results\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/task-validation-v2/task-runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/validation/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T21:15:58.052Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"check_name\": \"schema_validation\", \"check_type\": \"schema\", \"status\": \"passed\", \"message\": \"Output matches expected schema\"}",
+    "ResponseBody": "{\"id\": \"val-new\", \"task_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"check_name\": \"schema_validation\", \"check_type\": \"schema\", \"status\": \"passed\", \"message\": \"Validation passed\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/task-validation-v2/task-runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/validation/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T21:16:05.123Z",
+    "Scheme": "http"
+  }
+]
