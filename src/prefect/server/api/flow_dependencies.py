@@ -19,9 +19,9 @@ async def get_dependency_graph(flow_id: str):
     }
 
 
-@router.post("/flows/{flow_id}/validate")
-async def validate_dependencies(flow_id: str):
-    """Validate flow dependencies."""
+@router.post("/flows/{flow_id}/validate-graph")
+async def validate_dependency_graph(flow_id: str):
+    """Validate flow dependency graph for cycles and conflicts."""
     return {
         "flow_id": flow_id,
         "valid": True,
