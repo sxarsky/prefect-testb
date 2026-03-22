@@ -2,6 +2,7 @@
 Flow run checkpoints endpoints.
 """
 from prefect.server.utilities.server import PrefectRouter
+from fastapi import HTTPException
 
 router = PrefectRouter(prefix="/flow-checkpoints", tags=["Flow Checkpoints"])
 
