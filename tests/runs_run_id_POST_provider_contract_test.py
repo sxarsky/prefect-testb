@@ -65,6 +65,7 @@ def test_runs_run_id_post():
     assert skyramp.get_response_value(runs_run_id_POST_response, "checkpoint_id") is not None
     assert skyramp.get_response_value(runs_run_id_POST_response, "run_id") is not None
     assert skyramp.get_response_value(runs_run_id_POST_response, "saved") is not None
+    assert skyramp.get_response_value(runs_run_id_POST_response, "checkpoint_metadata") is not None
 
 
 if __name__ == "__main__":

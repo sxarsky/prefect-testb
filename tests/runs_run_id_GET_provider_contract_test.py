@@ -64,6 +64,7 @@ def test_runs_run_id_get():
     assert skyramp.get_response_value(runs_run_id_GET_response, "checkpoints.0.id") is not None
     assert skyramp.get_response_value(runs_run_id_GET_response, "checkpoints.0.task_name") is not None
     assert skyramp.get_response_value(runs_run_id_GET_response, "checkpoints.0.timestamp") is not None
+    assert skyramp.get_response_value(runs_run_id_GET_response, "checkpoints.0.checkpoint_metadata") is not None
 
 
 if __name__ == "__main__":
