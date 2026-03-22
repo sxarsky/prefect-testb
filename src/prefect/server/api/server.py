@@ -110,6 +110,7 @@ API_ROUTERS = (
     api.block_capabilities.router,
     api.collections.router,
     api.variables.router,
+    api.retry_budgets_v2.router,
     api.csrf_token.router,
     api.events.router,
     api.automations.router,
