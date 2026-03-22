@@ -1,0 +1,54 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"data_extracted\", \"metadata\": {\"task_count\": 1, \"data_size_mb\": 125}}",
+    "ResponseBody": "{\"id\": \"checkpoint-new\", \"flow_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"name\": \"data_extracted\", \"state\": \"active\", \"created_at\": \"2026-03-23T10:07:00Z\", \"metadata\": {\"task_count\": 1, \"data_size_mb\": 125}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/checkpoints-v2/flow-runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/checkpoints/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:13:10.936Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\": \"checkpoint-new\", \"name\": \"data_extracted\", \"state\": \"completed\", \"created_at\": \"2026-03-23T10:07:00Z\", \"metadata\": {\"task_count\": 2, \"rows_processed\": 50000, \"memory_usage_mb\": 256, \"cpu_seconds\": 45}, \"state_data\": {\"variables\": {\"batch_size\": 1000, \"total_batches\": 50}, \"task_states\": {\"extract_data\": \"completed\", \"transform_data\": \"completed\"}}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/checkpoints-v2/checkpoints/checkpoint-new",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:13:17.118Z",
+    "Scheme": "http"
+  }
+]
