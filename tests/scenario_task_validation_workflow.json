@@ -1,0 +1,80 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"check_name\": \"schema_validation\", \"check_type\": \"schema\", \"status\": \"passed\", \"message\": \"Data schema matches expected format\", \"details\": {\"expected_schema\": \"OrderSchema\", \"actual_schema\": \"OrderSchema\"}}",
+    "ResponseBody": "{\"id\": \"val-new\", \"task_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"check_name\": \"schema_validation\", \"check_type\": \"schema\", \"status\": \"passed\", \"message\": \"Data schema matches expected format\", \"details\": {\"expected_schema\": \"OrderSchema\", \"actual_schema\": \"OrderSchema\"}, \"timestamp\": \"2026-03-22T10:07:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/api/task-validation-v2/task-runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/validation/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:18:35.595Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"task_run_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"validation_status\": \"passed\", \"total_checks\": 5, \"passed_checks\": 4, \"failed_checks\": 1, \"skipped_checks\": 0, \"validation_results\": [{\"id\": \"val-1\", \"check_name\": \"schema_validation\", \"check_type\": \"schema\", \"status\": \"passed\", \"message\": \"Data schema matches expected format\", \"details\": {}, \"timestamp\": \"2026-03-22T10:05:20Z\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/api/task-validation-v2/task-runs/3fa85f64-5717-4562-b3fc-2c963f66afa6/validation/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:18:53.288Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_id\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\", \"total_task_runs\": 150, \"validated_task_runs\": 145, \"overall_pass_rate\": 0.96, \"validation_stats\": {\"total_checks\": 725, \"passed_checks\": 698, \"failed_checks\": 22, \"skipped_checks\": 5}, \"check_type_breakdown\": {\"schema\": {\"total\": 145, \"passed\": 145, \"failed\": 0}, \"assertion\": {\"total\": 290, \"passed\": 280, \"failed\": 10}}, \"recent_failures\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/api/task-validation-v2/flows/a1b2c3d4-e5f6-7890-abcd-ef1234567890/validation-summary/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:18:59.947Z",
+    "Scheme": "http"
+  }
+]
