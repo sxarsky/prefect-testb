@@ -1,0 +1,29 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"forecast_days\": 7, \"total_forecast_cost\": 10.64, \"forecast\": [{\"date\": \"2026-03-23\", \"predicted_cost\": 1.37, \"confidence\": 0.80}], \"model\": \"moving_average\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-costs-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/cost-forecast/",
+    "QueryParams": {
+      "days": [
+        "7"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:22:07.855Z",
+    "Scheme": "http"
+  }
+]

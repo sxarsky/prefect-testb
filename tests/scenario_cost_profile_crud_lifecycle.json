@@ -1,0 +1,71 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"currency\": \"USD\", \"cost_per_second\": 0.0001, \"cost_per_task\": 0.05, \"cost_per_gb_memory\": 0.0025, \"fixed_cost_per_run\": 0.10}",
+    "ResponseBody": "{\"id\": \"cp-3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"currency\": \"USD\", \"cost_per_second\": 0.0001, \"cost_per_task\": 0.05, \"cost_per_gb_memory\": 0.0025, \"fixed_cost_per_run\": 0.10}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-costs-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/cost-profile/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:22:04.013Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"cost_profile\": {\"id\": \"cp-3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"currency\": \"USD\", \"cost_per_second\": 0.0001, \"cost_per_task\": 0.05, \"cost_per_gb_memory\": 0.0025, \"fixed_cost_per_run\": 0.10}, \"current_spending\": {\"total_cost\": 45.75, \"total_runs\": 150, \"total_tasks\": 450, \"total_duration_seconds\": 12500, \"average_cost_per_run\": 0.305}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/flow-costs-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/cost-profile/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:22:28.441Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"success\": true, \"message\": \"Cost profile deleted\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/flow-costs-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/cost-profile/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:22:32.514Z",
+    "Scheme": "http"
+  }
+]
