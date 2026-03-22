@@ -1,0 +1,32 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"step\": 1, \"workflow_state\": \"running\"}",
+    "ResponseBody": "{\"detail\": \"Checkpoint must be validated before creation\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-checkpoints/runs/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "QueryParams": {
+      "task_name": [
+        "workflow-task"
+      ],
+      "validation_status": [
+        "pending"
+      ]
+    },
+    "StatusCode": 400,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T21:20:25.863Z",
+    "Scheme": "http"
+  }
+]

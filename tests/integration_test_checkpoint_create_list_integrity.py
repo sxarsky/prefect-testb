@@ -36,7 +36,7 @@ def test_integration():
         method="POST",
         body=runs_POST_request_body,
         path_params={"runs": runs},
-        query_params={"task_name": ["data-task-1"]}
+        query_params={"task_name": ["data-task-1"], "validation_status": "validated"}
     )
     # Generated Assertions
     assert runs_POST_response.status_code == 200
