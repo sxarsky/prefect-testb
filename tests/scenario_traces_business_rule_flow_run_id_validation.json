@@ -1,0 +1,71 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"skyramp-test-traces-business-rule-flow\"}",
+    "ResponseBody": "{\"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"name\": \"skyramp-test-traces-business-rule-flow\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/api/flows/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:09:51.629Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"name\": \"skyramp-test-traces-business-rule-run\"}",
+    "ResponseBody": "{\"id\": \"5bc07f86-6828-5784-d5he-4e185h88cgc8\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"name\": \"skyramp-test-traces-business-rule-run\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/api/flow-runs/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:10:03.529Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_run_id\": \"5bc07f86-6828-5784-d5he-4e185h88cgc8\", \"traces\": [{\"trace_id\": \"trace-1\", \"span_id\": \"span-1\", \"span_type\": \"task\", \"name\": \"extract_data\", \"started_at\": \"2026-03-23T10:00:00Z\", \"ended_at\": \"2026-03-23T10:01:30Z\", \"duration_ms\": 90000, \"status\": \"completed\", \"parent_span_id\": null}], \"total_spans\": 4}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/api/traces-v2/flow-runs/5bc07f86-6828-5784-d5he-4e185h88cgc8/traces/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:10:15.967Z",
+    "Scheme": "http"
+  }
+]
