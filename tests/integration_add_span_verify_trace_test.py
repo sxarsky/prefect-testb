@@ -50,6 +50,7 @@ def test_integration():
     )
     # Generated Assertions
     assert runs_GET_response.status_code == 200
+    assert skyramp.get_response_value(runs_GET_response, "trace_version") is not None
 
 
 if __name__ == "__main__":
