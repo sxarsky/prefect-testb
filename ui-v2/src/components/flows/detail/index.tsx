@@ -20,6 +20,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DeleteFlowDialog } from "./delete-flow-dialog";
 import { FlowDeploymentsTab } from "./flow-deployments-tab";
 import { FlowDetails } from "./flow-details";
+import { FlowImpactTab } from "./flow-impact-tab";
 import { FlowPageHeader } from "./flow-page-header";
 import { FlowStatsSummary } from "./flow-stats-summary";
 
@@ -60,7 +61,7 @@ export default function FlowDetail({
 	deploymentsCount: number;
 	totalDeploymentsCount: number;
 	deploymentsPages: number;
-	tab: "runs" | "deployments" | "details";
+	tab: "runs" | "deployments" | "details" | "impact";
 	pagination: PaginationState;
 	onPaginationChange: (pagination: PaginationState) => void;
 	onPrefetchPage: (page: number) => void;
@@ -118,7 +119,7 @@ export default function FlowDetail({
 							to: ".",
 							search: (prev) => ({
 								...prev,
-								tab: value as "runs" | "deployments" | "details",
+								tab: value as "runs" | "deployments" | "details" | "impact",
 							}),
 						})
 					}
@@ -127,6 +128,7 @@ export default function FlowDetail({
 						<TabsTrigger value="runs">Runs</TabsTrigger>
 						<TabsTrigger value="deployments">Deployments</TabsTrigger>
 						<TabsTrigger value="details">Details</TabsTrigger>
+						<TabsTrigger value="impact">Impact</TabsTrigger>
 					</TabsList>
 					<TabsContent value="runs" className="flex flex-col gap-4">
 						<div className="flex items-center justify-between">
@@ -183,6 +185,9 @@ export default function FlowDetail({
 					</TabsContent>
 					<TabsContent value="details">
 						<FlowDetails flow={flow} />
+					</TabsContent>
+					<TabsContent value="impact">
+						<FlowImpactTab flowId={flow.id} />
 					</TabsContent>
 				</Tabs>
 			</div>

@@ -59,7 +59,7 @@ import { usePageTitle } from "@/hooks/use-page-title";
 
 const searchParams = z
 	.object({
-		tab: z.enum(["runs", "deployments", "details"]).optional().default("runs"),
+		tab: z.enum(["runs", "deployments", "details", "impact"]).optional().default("runs"),
 		"runs.page": z.number().int().positive().optional().default(1),
 		"runs.limit": z.number().int().positive().max(100).optional().default(10),
 		"runs.sort": z.enum(SORT_FILTERS).optional().default("START_TIME_DESC"),
