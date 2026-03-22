@@ -1,0 +1,80 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"max_retries_per_task\": 3, \"max_retries_per_hour\": 50, \"max_retries_per_day\": 200, \"max_total_retry_duration_minutes\": 120, \"enabled\": true}",
+    "ResponseBody": "{\"id\": \"rb-3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"max_retries_per_task\": 3, \"max_retries_per_hour\": 50, \"max_retries_per_day\": 200, \"max_total_retry_duration_minutes\": 120, \"enabled\": true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/retry-budgets-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/retry-budget/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:28:55.958Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"retry_budget\": {\"id\": \"rb-3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"max_retries_per_task\": 3, \"max_retries_per_hour\": 50, \"max_retries_per_day\": 200, \"max_total_retry_duration_minutes\": 120, \"enabled\": true}, \"current_usage\": {\"retries_this_hour\": 0, \"retries_today\": 0, \"total_retry_duration_today_minutes\": 0, \"active_retrying_tasks\": 0}, \"usage_percentages\": {\"hourly\": 0.0, \"daily\": 0.0, \"duration\": 0.0}}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/retry-budgets-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/retry-budget/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:29:21.827Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"success\": true, \"message\": \"Retry budget configuration deleted\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/retry-budgets-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/retry-budget/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:29:25.926Z",
+    "Scheme": "http"
+  }
+]
