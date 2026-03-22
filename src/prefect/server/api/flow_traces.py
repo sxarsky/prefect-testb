@@ -11,6 +11,7 @@ async def get_execution_trace(run_id: str):
     """Get execution trace for a run."""
     return {
         "run_id": run_id,
+        "trace_version": "2.0",
         "spans": [
             {"span_id": "1", "name": "task-1", "duration_ms": 150},
             {"span_id": "2", "name": "task-2", "duration_ms": 200}
