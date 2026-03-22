@@ -97,6 +97,7 @@ API_ROUTERS = (
     api.task_run_states.router,
     api.deployments.router,
     api.saved_searches.router,
+    api.checkpoints_v2.router,
     api.logs.router,
     api.concurrency_limits.router,
     api.concurrency_limits_v2.router,
