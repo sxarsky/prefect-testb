@@ -1,0 +1,158 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"upstream-etl-flow\", \"tags\": [\"upstream\", \"etl\"]}",
+    "ResponseBody": "{\"id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\", \"name\": \"upstream-etl-flow\", \"tags\": [\"upstream\", \"etl\"], \"created\": \"2026-03-16T00:00:00Z\", \"updated\": \"2026-03-16T00:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flows/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T21:39:39.267Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"downstream-reporting-flow\", \"tags\": [\"downstream\", \"reporting\"]}",
+    "ResponseBody": "{\"id\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\", \"name\": \"downstream-reporting-flow\", \"tags\": [\"downstream\", \"reporting\"], \"created\": \"2026-03-16T00:00:00Z\", \"updated\": \"2026-03-16T00:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flows/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T21:39:43.726Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"flow_id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\", \"name\": \"upstream-etl-flow-run-1\", \"tags\": [\"test\"]}",
+    "ResponseBody": "{\"id\": \"cccccccc-cccc-cccc-cccc-cccccccccccc\", \"flow_id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\", \"name\": \"upstream-etl-flow-run-1\", \"state_type\": \"SCHEDULED\", \"tags\": [\"test\"], \"created\": \"2026-03-16T00:00:00Z\", \"updated\": \"2026-03-16T00:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/flow-runs/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T21:39:49.209Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"upstream_flow_id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\", \"downstream_flow_id\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\", \"dependency_type\": \"triggers\"}",
+    "ResponseBody": "{\"id\": \"dddddddd-dddd-dddd-dddd-dddddddddddd\", \"upstream_flow_id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\", \"downstream_flow_id\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\", \"dependency_type\": \"triggers\", \"created\": \"2026-03-16T00:00:00Z\", \"updated\": \"2026-03-16T00:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/impact/flows/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/dependencies/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T21:39:54.822Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\": \"eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee\", \"flow_run_id\": \"cccccccc-cccc-cccc-cccc-cccccccccccc\", \"impacted_flow_runs\": [], \"impacted_deployments\": [], \"severity\": \"medium\", \"calculated_at\": \"2026-03-16T00:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/impact/flow-runs/cccccccc-cccc-cccc-cccc-cccccccccccc/impact-analysis/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T21:40:00.347Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\", \"dependencies\": [{\"id\": \"dddddddd-dddd-dddd-dddd-dddddddddddd\", \"upstream_flow_id\": \"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa\", \"downstream_flow_id\": \"bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb\", \"dependency_type\": \"triggers\"}]}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/impact/flows/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/dependency-graph/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-16T21:40:05.883Z",
+    "Scheme": "http"
+  }
+]
