@@ -98,6 +98,7 @@ API_ROUTERS = (
     api.deployments.router,
     api.saved_searches.router,
     api.logs.router,
+    api.quotas_v2.router,
     api.concurrency_limits.router,
     api.concurrency_limits_v2.router,
     api.block_types.router,

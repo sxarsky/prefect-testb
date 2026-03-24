@@ -1,0 +1,123 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"id\": \"quota-123\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"max_concurrent_runs\": 10, \"max_daily_runs\": 100, \"max_hourly_runs\": 20, \"created_at\": \"2026-03-20T14:00:00Z\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/quotas-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/quota/",
+    "QueryParams": {
+      "max_concurrent_runs": [
+        "10"
+      ],
+      "max_daily_runs": [
+        "100"
+      ],
+      "max_hourly_runs": [
+        "20"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T19:00:44.995Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"id\": \"quota-123\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"max_concurrent_runs\": 10, \"max_daily_runs\": 100, \"max_hourly_runs\": 20}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/quotas-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/quota/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T19:01:01.042Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"id\": \"quota-123\", \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\", \"max_concurrent_runs\": 20, \"max_daily_runs\": 200, \"updated\": true}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "PATCH",
+    "Path": "/api/quotas-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/quota/",
+    "QueryParams": {
+      "max_concurrent_runs": [
+        "20"
+      ],
+      "max_daily_runs": [
+        "200"
+      ]
+    },
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T19:01:11.810Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"deleted\": true, \"flow_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Authorization": [
+        "Bearer SKYRAMP_PLACEHOLDER_TOKEN"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "DELETE",
+    "Path": "/api/quotas-v2/flows/3fa85f64-5717-4562-b3fc-2c963f66afa6/quota/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T19:01:22.647Z",
+    "Scheme": "http"
+  }
+]
