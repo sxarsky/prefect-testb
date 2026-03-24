@@ -1467,6 +1467,34 @@ class EventResource(Base):
     event_id: Mapped[uuid.UUID]
 
 
+class FlowCostProfile(Base):
+    """SQLAlchemy model for flow cost configuration"""
+
+    flow_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow.id", ondelete="cascade"), unique=True, index=True
+    )
+    cost_per_second: Mapped[float] = mapped_column(default=0.0)
+    cost_per_task: Mapped[float] = mapped_column(default=0.0)
+    currency: Mapped[str] = mapped_column(default="USD")
+
+    flow: Mapped["Flow"] = relationship(lazy="raise", foreign_keys=[flow_id])
+
+
+class FlowRunCost(Base):
+    """SQLAlchemy model for flow run cost tracking"""
+
+    flow_run_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("flow_run.id", ondelete="cascade"), unique=True, index=True
+    )
+    total_cost: Mapped[float] = mapped_column(default=0.0)
+    execution_seconds: Mapped[int] = mapped_column(default=0)
+    task_count: Mapped[int] = mapped_column(default=0)
+    calculated_at: Mapped[Optional[DateTime]]
+    cost_breakdown: Mapped[Optional[dict[str, Any]]] = mapped_column(JSON)
+
+    flow_run: Mapped["FlowRun"] = relationship(lazy="raise", foreign_keys=[flow_run_id])
+
+
 # These are temporary until we've migrated all the references to the new,
 # non-ORM names
 
@@ -1505,6 +1533,8 @@ ORMCompositeTriggerChildFiring = CompositeTriggerChildFiring
 ORMAutomationEventFollower = AutomationEventFollower
 ORMEvent = Event
 ORMEventResource = EventResource
+ORMFlowCostProfile = FlowCostProfile
+ORMFlowRunCost = FlowRunCost
 
 
 _UpsertColumns = Iterable[Union[str, "sa.Column[Any]", roles.DDLConstraintColumnRole]]
