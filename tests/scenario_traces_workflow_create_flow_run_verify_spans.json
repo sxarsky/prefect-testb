@@ -1,0 +1,71 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"name\": \"skyramp-test-traces-workflow-flow\"}",
+    "ResponseBody": "{\"id\": \"4ab96e75-6828-5673-c4gd-3d074g77bfb7\", \"name\": \"skyramp-test-traces-workflow-flow\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/api/flows/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:09:54.940Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{\"flow_id\": \"4ab96e75-6828-5673-c4gd-3d074g77bfb7\", \"name\": \"skyramp-test-traces-workflow-run\"}",
+    "ResponseBody": "{\"id\": \"6cd18g97-7939-6895-e6if-5f296i99dhd9\", \"flow_id\": \"4ab96e75-6828-5673-c4gd-3d074g77bfb7\", \"name\": \"skyramp-test-traces-workflow-run\"}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/api/flow-runs/",
+    "QueryParams": {},
+    "StatusCode": 201,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:10:07.413Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_run_id\": \"6cd18g97-7939-6895-e6if-5f296i99dhd9\", \"traces\": [{\"trace_id\": \"trace-1\", \"span_id\": \"span-1\", \"span_type\": \"task\", \"name\": \"extract_data\", \"started_at\": \"2026-03-23T10:00:00Z\", \"ended_at\": \"2026-03-23T10:01:30Z\", \"duration_ms\": 90000, \"status\": \"completed\", \"parent_span_id\": null}, {\"trace_id\": \"trace-1\", \"span_id\": \"span-4\", \"span_type\": \"subflow\", \"name\": \"validation_subflow\", \"started_at\": \"2026-03-23T10:05:25Z\", \"ended_at\": \"2026-03-23T10:06:10Z\", \"duration_ms\": 45000, \"status\": \"completed\", \"parent_span_id\": \"span-3\"}], \"total_spans\": 4}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/api/traces-v2/flow-runs/6cd18g97-7939-6895-e6if-5f296i99dhd9/traces/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-22T20:10:20.790Z",
+    "Scheme": "http"
+  }
+]
