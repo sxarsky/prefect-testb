@@ -1,0 +1,48 @@
+[
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "",
+    "ResponseBody": "{\"flow_id\": \"a1b2c3d4-5617-4abc-b3fc-2c963f66bcd5\", \"total_tasks\": 15, \"max_depth\": 5, \"max_width\": 4, \"parallelizable_tasks\": 8, \"sequential_tasks\": 7, \"critical_path_length\": 5}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "GET",
+    "Path": "/api/graph-v2/flows/a1b2c3d4-5617-4abc-b3fc-2c963f66bcd5/graph-analysis/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:40:55.406Z",
+    "Scheme": "http"
+  },
+  {
+    "Source": "192.168.65.1:39998",
+    "Destination": "localhost",
+    "RequestBody": "{}",
+    "ResponseBody": "{\"flow_id\": \"a1b2c3d4-5617-4abc-b3fc-2c963f66bcd5\", \"valid\": true, \"circular_dependencies\": [], \"unreachable_tasks\": [], \"warnings\": []}",
+    "RequestHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "ResponseHeaders": {
+      "Content-Type": [
+        "application/json"
+      ]
+    },
+    "Method": "POST",
+    "Path": "/api/graph-v2/flows/a1b2c3d4-5617-4abc-b3fc-2c963f66bcd5/validate-graph/",
+    "QueryParams": {},
+    "StatusCode": 200,
+    "Port": 4200,
+    "Timestamp": "2026-03-20T17:41:13.215Z",
+    "Scheme": "http"
+  }
+]
