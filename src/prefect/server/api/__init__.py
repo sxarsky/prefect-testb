@@ -25,6 +25,7 @@ from . import (
     task_run_states,
     task_runs,
     task_workers,
+    task_validation_v2,
     templates,
     ui,
     variables,
