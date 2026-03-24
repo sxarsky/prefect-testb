@@ -1,0 +1,7 @@
+# Skyramp Workspace Configuration for SKYR-3646 Validation
+# Testing that workspace config IS used when workflow doesn't override
+
+test_directory: workspace-tests
+
+# Expected behavior: Since workflow has NO test_directory override,
+# testbot should use this workspace config value
