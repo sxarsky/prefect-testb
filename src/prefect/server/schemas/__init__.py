@@ -2,6 +2,7 @@ from . import (
     states,
     statuses,
     schedules,
+    checkpoints,
     core,
     sorting,
     filters,
@@ -13,6 +14,7 @@ from . import (
 
 __all__ = [
     "actions",
+    "checkpoints",
     "core",
     "filters",
     "responses",
