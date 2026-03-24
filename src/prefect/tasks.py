@@ -159,6 +159,7 @@ class TaskOptions(TypedDict, total=False):
     retry_condition_fn: Optional[RetryConditionCallable]
     viz_return_value: Any
     asset_deps: Optional[list[Union[Asset, str]]]
+    output_schema: Optional[type]
 
 
 def task_input_hash(
@@ -415,6 +416,7 @@ class Task(Generic[P, R]):
         retry_condition_fn: Optional[RetryConditionCallable] = None,
         viz_return_value: Optional[Any] = None,
         asset_deps: Optional[list[Union[str, Asset]]] = None,
+        output_schema: Optional[type] = None,
     ):
         # Validate if hook passed is list and contains callables
         hook_categories = [on_completion, on_failure, on_running]
@@ -627,6 +629,8 @@ class Task(Generic[P, R]):
             if asset_deps
             else []
         )
+
+        self.output_schema = output_schema
 
     @property
     def ismethod(self) -> bool:
@@ -1996,6 +2000,7 @@ def task(
     retry_condition_fn: Optional[RetryConditionCallable] = None,
     viz_return_value: Any = None,
     asset_deps: Optional[list[Union[str, Asset]]] = None,
+    output_schema: Optional[type] = None,
 ):
     """
     Decorator to designate a function as a task in a Prefect workflow.
@@ -2151,6 +2156,7 @@ def task(
             retry_condition_fn=retry_condition_fn,
             viz_return_value=viz_return_value,
             asset_deps=asset_deps,
+            output_schema=output_schema,
         )
     else:
         return cast(
@@ -2182,6 +2188,7 @@ def task(
                 retry_condition_fn=retry_condition_fn,
                 viz_return_value=viz_return_value,
                 asset_deps=asset_deps,
+                output_schema=output_schema,
             ),
         )
 
