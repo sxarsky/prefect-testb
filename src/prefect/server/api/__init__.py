@@ -10,6 +10,7 @@ from . import (
     collections,
     concurrency_limits,
     concurrency_limits_v2,
+    config_test,
     csrf_token,
     dependencies,
     deployments,
